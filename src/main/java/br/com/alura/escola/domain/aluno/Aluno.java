@@ -1,11 +1,11 @@
 package br.com.alura.escola.domain.aluno;
 
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@RequiredArgsConstructor
 @Builder
 @Getter
 @Setter
@@ -15,22 +15,22 @@ public class Aluno  {
     considerada uma classe espelho da vida real e deve possuir um atributo de identificador único.
   */
 
-  @NonNull
   private CPF cpf;
 
   @NonNull
-  private String nome;
+  private String name;
 
-  @NonNull
   private Email email;
 
-  private List<Telefone> telefoneList = new ArrayList<>();
+  private String password;
 
-  public void adicionarTelefone(String ddd, String numero){
-    this.telefoneList.add(new Telefone(ddd, numero));
+  private List<Telefone> telephoneList = new ArrayList<>();
+
+  public void addTelephone(String ddd, String numero){
+    this.telephoneList.add(new Telefone(ddd, numero));
   }
 
-  public void adicionarTelefone(Telefone telefone){
-    this.telefoneList.add(telefone);
+  public void addTelephone(Telefone telefone){
+    this.telephoneList.add(telefone);
   }
 }

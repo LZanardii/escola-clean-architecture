@@ -1,9 +1,8 @@
 package br.com.alura.escola.domain.aluno;
 
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @AllArgsConstructor
 @Getter
@@ -15,5 +14,5 @@ public class Email {
 
   @NotNull
   @jakarta.validation.constraints.Email
-  private String email;
+  private @Valid String endereco;
 }

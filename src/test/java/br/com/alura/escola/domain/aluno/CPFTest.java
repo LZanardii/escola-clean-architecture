@@ -1,6 +1,5 @@
 package br.com.alura.escola.domain.aluno;
 
-import br.com.alura.escola.domain.aluno.CPF;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.Validation;
 import jakarta.validation.Validator;
@@ -30,7 +29,7 @@ public class CPFTest {
 
   @Test
   public void testInvalidCPF() {
-    CPF invalidEmail = new CPF("invalid-cpf");
+    CPF invalidEmail = new CPF("00000000000");
     Set<ConstraintViolation<CPF>> violations = validator.validate(invalidEmail);
     assertEquals("número do registro de contribuinte individual brasileiro (CPF) inválido", violations.stream().findFirst().orElseThrow().getMessage());
   }

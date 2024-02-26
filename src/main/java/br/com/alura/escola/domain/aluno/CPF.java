@@ -1,9 +1,9 @@
 package br.com.alura.escola.domain.aluno;
 
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
+import org.springframework.validation.annotation.Validated;
 
 @AllArgsConstructor
 @Getter
@@ -14,6 +14,5 @@ public class CPF {
   */
 
   @NotNull
-  @org.hibernate.validator.constraints.br.CPF
-  private String cpf;
+  private @Valid String numero;
 }
